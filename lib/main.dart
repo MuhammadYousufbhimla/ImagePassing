@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:image_picker/image_picker.dart';
 
 Future<void> main() async {
@@ -101,20 +102,18 @@ class TakePictureScreenState extends State<TakePictureScreen> {
       floatingActionButton: ExpandableFab(
   distance: 112.0,
   children: [
-    ActionButton(
-      onPressed: () => _showAction(context, 0),
-      icon: const Icon(Icons.format_size),
-    ),
-    ActionButton(
-      onPressed: () => _showAction(context, 1),
-      icon: const Icon(Icons.insert_photo),
-    ),
-    ActionButton(
-      onPressed: () => _showAction(context, 2),
-      icon: const Icon(Icons.videocam),
-    ),
+    FloatingActionButton.small(
+        child: const Icon(Icons.camera),
+        onPressed: () {},
+      ),
+    
+   FloatingActionButton.small(
+        child: const Icon(Icons.browse_gallery),
+        onPressed: () {},
+      ),
   ],
 )
+
   //     floatingActionButton: FloatingActionButton(
       
   //       onPressed: () async {
